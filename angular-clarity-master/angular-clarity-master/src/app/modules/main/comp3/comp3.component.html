@@ -1,0 +1,75 @@
+<div class="container">
+  <form [formGroup]="entryForm" (ngSubmit)="onSubmit()">
+      <div class="display_msg">
+          <h2> <b>How are you currently managing your work_<br>from home,the office,or whereyour you are?</b></h2>
+          <p style="font-size:18px;">Choose any option(s) below.</p>
+      </div>
+
+
+      <br>
+      <div class="s-order-dash-pg">
+        <!-- <div class="chart-box" id="word1" *ngFor="let app of tools1; let index = i" [routerLink]="app.action"><br>
+          <b style="margin-left: 50px;"><clr-icon shape="container-volume" size="40"></clr-icon></b>
+          <h5 class="center"> <b>{{ app.title }}</b>  </h5>
+        </div> -->
+        <div class="chart-box" id="word1"><br>
+          <b style="margin-left: 50px;"><clr-icon shape="container-volume" size="40" ></clr-icon></b><br>
+          <b>
+            <input type="radio" id="" formControlName="managing_work" value=" development" style="text-align: center;margin-left: 60px;margin-top: 20px;"><br>
+          </b>
+          <h5 class="center"> <b>100% Local Development</b>  </h5>
+        </div>
+        <div class="chart-box" id="word1"><br>
+          <b style="margin-left: 50px;"><clr-icon shape="container-volume" size="40"></clr-icon></b><br>
+          <b>
+            <input type="radio" id="" formControlName="managing_work" value="github" style="text-align: center;margin-left: 60px;margin-top: 20px;"><br>
+          </b>
+          <h5 class="center"> <b> Local + Github/GitLab</b>  </h5>
+        </div>
+        <div class="chart-box" id="word1"><br>
+          <b style="margin-left: 50px;"><clr-icon shape="container-volume" size="40"></clr-icon></b><br>
+          <b>
+            <input type="radio" id="" formControlName="managing_work" value="cloud" style="text-align: center;margin-left: 60px;margin-top: 20px;"><br>
+          </b>
+          <h5 class="center"> <b>100% on cloud</b>  </h5>
+        </div>
+
+      </div>
+      <!-- <div class="s-order-dash-pg">
+
+
+          <span>
+
+              <cds-icon class="icon" shape="computer" badge="warning-triangle"></cds-icon>
+
+              <input type="radio" id="" formControlName="managing_work" value=" development">
+              <label>100% Local Development</label>
+
+          </span>
+
+          <span>
+              <cds-icon class="icon" shape="file" badge="info"></cds-icon>
+
+              <input type="radio" id="" formControlName="managing_work" value="github">
+              <label> Local + Github/GitLab</label>
+          </span>
+
+          <span>
+              <cds-icon class="icon" shape="file" badge="info"></cds-icon>
+
+
+              <input type="radio" id="" formControlName="managing_work" value="cloud">
+              <label>100% on cloud</label>
+          </span>
+
+
+
+
+      </div> -->
+
+
+      <button style="margin-left: 700px;"  type="submit" class="btn btn-primary" [disabled]="!entryForm.valid">Continue</button>
+
+
+  </form>
+</div>

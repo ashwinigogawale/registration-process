@@ -1,0 +1,33 @@
+BACKEND CHANGES :-
+
+     Location :- CNS-Registration/Registration/src/main/java/com/services/registration/config/SecurityConfig.java
+     Line no  :- 248
+     Change   :- Enter Frontend Url  (http://54.227.230.160:31165)
+     
+     
+FRONTEND CHANGES :-
+
+    1 :-
+       Location :- CNS-Registration/angular-clarity-master/angular-clarity-master/src/app/app-config.ts
+       Change   :- Enter Backend Port
+       
+    2 :-
+       Location :- CNS-Registration/angular-clarity-master/angular-clarity-master/src/app/services/user-registration1.service.ts
+       Line no  :- 55
+       Change   :- Enter Backend Url
+       
+    3 :-
+       Location :- CNS-Registration/angular-clarity-master/angular-clarity-master/src/app/modules/login/oauthmid/oauthmid.component.ts
+       Line no  :- 21, 60 & 62
+       Change   :- Enter Backend Url
+       
+    4 :-
+       Location :- CNS-Registration/angular-clarity-master/angular-clarity-master/src/app/modules/main/social-login/social-login.component.ts
+       Line no  :- 37
+       Change   :- Enter Backend Url
+       
+       
+FRONTEND URL :- http://54.227.230.160:31165
+BACKEND URL  :- http://54.227.230.160:31167
+BACKEND PORT :- 31167
+       
