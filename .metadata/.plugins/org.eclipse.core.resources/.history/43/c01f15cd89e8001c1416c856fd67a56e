@@ -360,7 +360,6 @@ public class UserServiceImpl implements UserDetailsService, UserService { // Use
         message.setTo(email);
         message.setSubject("please verify email");
         message.setText("http://surecns.ml:31165/#/about-work/" + id + "/" + checkNo);
-        http://surecns.ml:31165/#/create-account
         javaMailSender.send(message);
 
     }
@@ -477,7 +476,7 @@ public class UserServiceImpl implements UserDetailsService, UserService { // Use
         message.setSubject("please verify email");
 
 
-        message.setText("http://surecns.ml:31165/#/about-work/" + userId + "/" + checknumber);
+        message.setText("http://localhost:4200/#/about-work/" + userId + "/" + checknumber);
 
 
         javaMailSender.send(message);
@@ -495,7 +494,7 @@ public class UserServiceImpl implements UserDetailsService, UserService { // Use
         message.setSubject("please verify email");
 
 
-        message.setText("http://surecns.ml:31165/#/about-work/" + userId + "/" + checknumber);
+        message.setText("http://localhost:4200/#/about-work/" + userId + "/" + checknumber);
 
 
         javaMailSender.send(message);
@@ -514,7 +513,7 @@ public class UserServiceImpl implements UserDetailsService, UserService { // Use
         message.setSubject("please verify email");
 
 
-        message.setText("http://surecns.ml:31165/#/about-work/" + userId + "/" + checknumber);
+        message.setText("http://localhost:4200/#/about-work/" + userId + "/" + checknumber);
 
 
         javaMailSender.send(message);
@@ -532,7 +531,7 @@ public class UserServiceImpl implements UserDetailsService, UserService { // Use
         message.setSubject("please verify email");
 
 
-        message.setText("http://surecns.ml:31165/#/about-work/" + userId + "/" + checknumber);
+        message.setText("http://localhost:4200/#/about-work/" + userId + "/" + checknumber);
 
 
         javaMailSender.send(message);
