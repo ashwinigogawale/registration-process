@@ -8,39 +8,60 @@
     <h5 class="text-center">You're signing up as <strong style="font-size: 20px;">{{ email }}</strong></h5>
     <br>
 
-    <form [formGroup]="entryForm" (ngSubmit)="onContinue()" class="pop" style="text-align: center;">
+    <form [formGroup]="form" (ngSubmit)="onContinue()" class="pop" style="text-align: center;">
 
       <div class="clr-col-md-4 clr-col-sm-12 center">
         <label for="controllerName"><strong>What's your full name?</strong></label><br/>
-        <input class="clr-input" type="text" id="name" formControlName="name"  value="name">
+        <input class="clr-input" type="text" id="name" formControlName="name"  value="name"
+        [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+          <div *ngIf="f.name.errors.required">Fullname is required</div>
+        </div>
       </div>
 
 
       <div class="clr-col-md-4 clr-col-sm-12 center">
         <label for="controllerName"><strong>Password</strong></label><br/>
-        <input class="clr-input" type="password" id="password" formControlName="password">
+        <input class="clr-input" type="password" id="password" formControlName="password"
+        [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
 
-        <div>Password must be 8 characters or longer.</div>
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <div *ngIf="f.password.errors.required">Password is required</div>
+          <div *ngIf="f.password.errors.minlength">
+            Password must be at least 8 characters
+          </div>
+          <div *ngIf="f.password.errors.maxlength">
+            Username must not exceed 40 characters
+          </div>
+        </div>
       </div>
       <br/>
       <div class="clr-col-md-4 clr-col-sm-12 center">
         <label for="controllerName"><strong>Re-enter Password</strong></label><br/>
         <input class="clr-input" type="password" id="cpass" formControlName="">
 
-        <div>Password must be 8 characters or longer.</div>
+
       </div>
       <br>
       <div class="clr-col-md-4 clr-col-sm-12 center">
         <label for="controllerName"><strong>Mobile</strong></label><br/>
 
-        <input formControlName="mobile" class="clr-input" type="number" ng2TelInput/>
-
+        <input formControlName="mobile" class="clr-input" type="number" ng2TelInpu
+        [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }"/>
+        <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
+          <div *ngIf="f.mobile.errors.required">Mobile No is required</div>
+        </div>
       </div>
 
       <br>
       <div class="clr-col-md-4 clr-col-sm-12 center">
         <label for="controllerName"><strong>Email</strong></label><br/>
-        <input class="clr-input" type="text" id="email" name="email" formControlName="email">
+        <input class="clr-input" type="text" id="email" name="email" formControlName="email"
+        [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required">Email is required</div>
+          <div *ngIf="f.email.errors.email">Email is invalid</div>
+        </div>
       </div>
       <br>
 

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {UserProfileService} from 'src/app/services/api/user-profile.service';
 import {UserRegistrationService} from 'src/app/services/api/user-registration.service';
@@ -13,12 +13,14 @@ export class AboutWorkComponent implements OnInit {
 
 
   public entryForm: FormGroup;
+  public  form: FormGroup;
   aboutdata;
   id: number;
   checknumberId: number;
   data1: boolean;
   name:string;
   email: string;
+  submitted = false;
 
   constructor(
     private router: Router,
@@ -55,6 +57,15 @@ export class AboutWorkComponent implements OnInit {
       email: [null],
       mobile: [null],
     });
+    //form validation
+    this.form = this._fb.group(
+      {
+        name: ['', Validators.required],
+        password: ['',[ Validators.required, Validators.minLength(6), Validators.maxLength(40)]],
+        email: ['', [Validators.required, Validators.email]],
+        confirmPassword: ['', Validators.required],
+        mobile: ['', Validators.required,Validators.minLength(10)]
+      }, );
   }
 
   onContinue() {
@@ -85,13 +96,17 @@ export class AboutWorkComponent implements OnInit {
       this.email = data.email;
       this.name=data.fullName;
       (<FormControl>this.entryForm.controls['email']).setValue(data.email);
+      (<FormControl>this.entryForm.controls['name']).setValue(data.fullName);
       console.log(this.name)
 
     }))
 
 
   }
-
+  onReset(): void {
+    this.submitted = false;
+    this.form.reset();
+  }
 
   onCountryChange(event) {
     console.log(event.dialCode);
